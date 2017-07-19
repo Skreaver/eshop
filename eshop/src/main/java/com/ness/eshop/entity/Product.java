@@ -7,7 +7,7 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class Product implements Entity {
+public class Product extends EntityInterface {
 
 	private int id;
 	private String name;

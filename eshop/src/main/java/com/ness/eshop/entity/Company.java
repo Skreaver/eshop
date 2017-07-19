@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Company implements Entity {
+public class Company extends EntityInterface {
 	
 	private int id;
 	private String name;

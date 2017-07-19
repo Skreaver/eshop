@@ -3,9 +3,9 @@ package com.ness.eshop.repositery;
 import java.util.List;
 import java.util.Optional;
 
-import com.ness.eshop.entity.Entity;
+import com.ness.eshop.entity.EntityInterface;
 
-public interface Repository<T extends Entity> {
+public interface Repository<T extends EntityInterface> {
 
     T save(T t);
 

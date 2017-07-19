@@ -7,7 +7,7 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class Order implements Entity {
+public class Order extends EntityInterface {
 	private int id;
 	private int buyer;
 	private Date orderDate;

@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import com.ness.eshop.entity.Company;
 import com.ness.eshop.entity.User;
-import com.ness.eshop.service.UserServiceSORM;
 
 
 
@@ -23,7 +22,7 @@ public class RepositoryTest {
 	User rado = new User(0, "Rado","123", "Rado Balucha");
 	User roman = new User(2, "roky","321", "Roman Caplar");
 
-	UserServiceSORM userServiceSORM = new UserServiceSORM(User.class);
+	//UserServiceSORM userServiceSORM = new UserServiceSORM(User.class);
 
 
 	
@@ -47,13 +46,13 @@ public class RepositoryTest {
 	@Test
 	public void add() {
 
-		userServiceSORM.save(rado);
+		//userServiceSORM.save(rado);
 		
-		Object o = userServiceSORM.findById(6);
+		//Object o = userServiceSORM.findById(6);
 		
-		String name = o.toString();
+		//String name = o.toString();
 
-		System.out.println(name);
+		//System.out.println(name);
 		//assertEquals(rado, name);
 	
 

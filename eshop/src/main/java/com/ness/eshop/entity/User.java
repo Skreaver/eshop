@@ -1,26 +1,36 @@
 package com.ness.eshop.entity;
 
-import com.ness.eshop.serrvice.annotation.Column;
-import com.ness.eshop.serrvice.annotation.Table;
-
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @AllArgsConstructor
 @Data
-@Table(name ="Person", createDrop = true)
-public class User implements Entity {
+@Entity
+@Table(name="person")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="TYPE", discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorValue("General")
+public class User extends EntityInterface {
 
-	@Column(name = "id" , primaryKey = true)
+	@Id
+	@GeneratedValue
 	private int id;
 	
-	@Column(name = "login")
+	@Column(unique=true)
 	private String login;
 	
-	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "name")
 	private String name;
 	
 	public User(){

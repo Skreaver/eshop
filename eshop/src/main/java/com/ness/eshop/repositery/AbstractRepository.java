@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
-import com.ness.eshop.entity.Entity;
+import com.ness.eshop.entity.EntityInterface;
 
-public abstract class AbstractRepository<T extends Entity> implements Repository<T> {
+public abstract class AbstractRepository<T extends EntityInterface> implements Repository<T> {
 
 	private static final AtomicInteger idGenerator = new AtomicInteger(1);
 	private List<T> items;

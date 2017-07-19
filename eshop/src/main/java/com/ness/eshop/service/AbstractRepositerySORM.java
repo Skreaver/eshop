@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.ness.eshop.entity.Entity;
+import com.ness.eshop.entity.EntityInterface;
 import com.ness.eshop.repositery.Repository;
 
-public class AbstractRepositerySORM<T extends Entity> implements Repository<T> {
+public class AbstractRepositerySORM<T extends EntityInterface> implements Repository<T> {
 
 	private Class<T> type;
 

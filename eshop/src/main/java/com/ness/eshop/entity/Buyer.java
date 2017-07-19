@@ -2,6 +2,9 @@ package com.ness.eshop.entity;
 
 import java.math.BigDecimal;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,17 +12,24 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-
+@Entity
+@DiscriminatorValue("Buyer")
 public class Buyer extends User {
 
 	private int company;
 	private BigDecimal creditLimit;
-
 	public Buyer(int id, String login, String password, String name, int company, BigDecimal creditLimit) {
 		super(id, login, password, name);
 		this.company = company;
 		this.creditLimit = creditLimit;
 	}
+	
+
+
+	public Buyer() {
+		super();
+	}
+
 
 	@Override
 	public int hashCode() {
@@ -48,5 +58,6 @@ public class Buyer extends User {
 			return false;
 		return true;
 	}
+
 
 }

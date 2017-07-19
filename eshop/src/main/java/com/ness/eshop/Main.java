@@ -6,6 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
+
+
+
 @Configuration
 @SpringBootApplication
 public class Main {
@@ -15,10 +19,12 @@ public class Main {
 	}
 	
 	@Bean
-	public CommandLineRunner runner(ConsoleUI ui) { return args ->ui.handleInput(); }
+	public CommandLineRunner runner(ConsoleUI ui) { return args ->ui.run(); }
 
 	@Bean
 	public ConsoleUI consoleUI() {
 		return new ConsoleUI();
 	}
+	
+	
 }
