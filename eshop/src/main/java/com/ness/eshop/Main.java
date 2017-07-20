@@ -7,9 +7,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
-
-
-
 @Configuration
 @SpringBootApplication
 public class Main {
@@ -18,8 +15,8 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 	}
 	
-	@Bean
-	public CommandLineRunner runner(ConsoleUI ui) { return args ->ui.run(); }
+	//@Bean
+	//public CommandLineRunner runner(ConsoleUI ui) { return args ->ui.run(); }
 
 	@Bean
 	public ConsoleUI consoleUI() {
