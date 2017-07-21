@@ -10,11 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@AllArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name="person")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -22,9 +23,7 @@ import lombok.Data;
 @DiscriminatorValue("General")
 public class User extends EntityInterface {
 
-	@Id
-	@GeneratedValue
-	private int id;
+	
 	
 	@Column(unique=true)
 	private String login;
@@ -33,9 +32,23 @@ public class User extends EntityInterface {
 	
 	private String name;
 	
-	public User(){
-		
+	public User(int id, String login, String password, String name) {
+		super(id);
+		this.login = login;
+		this.password = password;
+		this.name = name;
 	}
 
+	public User(String login, String password, String name) {
+		this.login = login;
+		this.password = password;
+		this.name = name;
+	}
+	
+	public User() {
+		
+	}
+	
+	
 
 }

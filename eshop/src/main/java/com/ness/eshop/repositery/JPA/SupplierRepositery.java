@@ -1,4 +1,4 @@
-package com.ness.eshop.service.JPA;
+package com.ness.eshop.repositery.JPA;
 
 
 import com.ness.eshop.entity.Supplier;

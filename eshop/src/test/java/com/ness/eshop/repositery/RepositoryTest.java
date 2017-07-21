@@ -18,9 +18,9 @@ public class RepositoryTest {
 	Company vlaky = new Company(2, "vlaky");
 	Company zel = new Company(0, "zeleznice");
 	
-	User marek = new User(0, "Marko","123", "Marek Halecky");
-	User rado = new User(0, "Rado","123", "Rado Balucha");
-	User roman = new User(2, "roky","321", "Roman Caplar");
+	//User marek = new User(0, "Marko","123", "Marek Halecky");
+	//User rado = new User(0, "Rado","123", "Rado Balucha");
+	//User roman = new User(2, "roky","321", "Roman Caplar");
 
 	//UserServiceSORM userServiceSORM = new UserServiceSORM(User.class);
 

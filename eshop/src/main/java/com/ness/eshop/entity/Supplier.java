@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Supplier")
 public class Supplier extends User {
 
-	public Supplier(int id, String login, String password, String name) {
-		super(id, login, password, name);
+	public Supplier(String login, String password, String name) {
+		super(login, password, name);
 	}
 	
 	public Supplier() {

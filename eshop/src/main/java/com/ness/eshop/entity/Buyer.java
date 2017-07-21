@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,6 +19,7 @@ public class Buyer extends User {
 
 	private int company;
 	private BigDecimal creditLimit;
+	
 	public Buyer(int id, String login, String password, String name, int company, BigDecimal creditLimit) {
 		super(id, login, password, name);
 		this.company = company;
@@ -25,11 +27,16 @@ public class Buyer extends User {
 	}
 	
 
-
-	public Buyer() {
-		super();
+	public Buyer(String login, String password, String name, int company, BigDecimal creditLimit) {
+		super(login, password, name);
+		this.company = company;
+		this.creditLimit = creditLimit;
 	}
 
+
+	public Buyer() {
+		
+	}
 
 	@Override
 	public int hashCode() {
@@ -59,5 +66,9 @@ public class Buyer extends User {
 		return true;
 	}
 
+
+
+
+	
 
 }

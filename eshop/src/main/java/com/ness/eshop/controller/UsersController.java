@@ -1,52 +1,56 @@
 package com.ness.eshop.controller;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.ness.eshop.entity.Buyer;
-import com.ness.eshop.entity.Supplier;
+import org.springframework.web.context.request.WebRequest;
+
+import com.ness.eshop.domain.UserDTO;
 import com.ness.eshop.entity.User;
-import com.ness.eshop.service.JPA.AbstractRepositoryJPA;
+import com.ness.eshop.service.UserService;
 
 @RestController
 @RequestMapping("/users")
 public class UsersController {
 
-	private AbstractRepositoryJPA<User> userRepository;
-
-	private AbstractRepositoryJPA<Supplier> supplierRepository;
-
-	private AbstractRepositoryJPA<Buyer> buyerRepository;
-
-	public UsersController(AbstractRepositoryJPA<User> userRepository,
-			AbstractRepositoryJPA<Supplier> supplierRepository, AbstractRepositoryJPA<Buyer> buyerRepository) {
-		this.supplierRepository = supplierRepository;
-		this.buyerRepository = buyerRepository;
-		this.userRepository = userRepository;
-	}
-
-	@GetMapping
-	public List<User> findAll() {
-		return userRepository.findAll();
-	}
+	@Autowired
+	public UserService userService;
 
 	@GetMapping
 	@RequestMapping("/{id}")
-	public User findById(@PathVariable int id) {
-		return userRepository.findById(id).orElse(null);
+	public UserDTO findById(@PathVariable int id) {
+
+		return userService.findById(id);
+	}
+
+	
+	@GetMapping
+	@RequestMapping("/all")
+	public List<UserDTO> findAll() {
+
+		return userService.findAll();
 	}
 
 	@PostMapping
-	@RequestMapping("/buyer_save")
-	public User saveBuyer(Buyer buyer) {
+	@RequestMapping("/save")
+	public User saveUser(UserDTO userDTO) {
 
-		return buyerRepository.save(buyer);
-
+		return userService.saveUser(userDTO);
+	}
+	
+	
+	@RequestMapping("/registration")
+	public String registration() {
+	
+		return "registration";
+		
 	}
 
+	
 }

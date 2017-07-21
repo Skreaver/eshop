@@ -1,4 +1,4 @@
-package com.ness.eshop.service;
+package com.ness.eshop.repositery.SOM_repository;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
