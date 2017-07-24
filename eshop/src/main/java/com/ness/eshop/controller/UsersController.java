@@ -3,6 +3,7 @@ package com.ness.eshop.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.context.request.WebRequest;
 import com.ness.eshop.domain.UserDTO;
 import com.ness.eshop.entity.User;
 import com.ness.eshop.service.UserService;
+
 
 @RestController
 @RequestMapping("/users")
@@ -43,14 +45,5 @@ public class UsersController {
 
 		return userService.saveUser(userDTO);
 	}
-	
-	
-	@RequestMapping("/registration")
-	public String registration() {
-	
-		return "registration";
-		
-	}
-
 	
 }

@@ -32,6 +32,9 @@ public class User extends EntityInterface {
 	
 	private String name;
 	
+	@Column(name = "enabled", nullable = false)
+	private boolean enabled;
+	
 	public User(int id, String login, String password, String name) {
 		super(id);
 		this.login = login;
@@ -39,16 +42,34 @@ public class User extends EntityInterface {
 		this.name = name;
 	}
 
+
+
+	public User(String login, String password, String name, boolean enabled) {
+		super();
+		this.login = login;
+		this.password = password;
+		this.name = name;
+		this.enabled = enabled;
+	}
+	
+
 	public User(String login, String password, String name) {
+		super();
 		this.login = login;
 		this.password = password;
 		this.name = name;
 	}
+
+	
+	
 	
 	public User() {
 		
 	}
-	
+
+
+
+
 	
 
 }

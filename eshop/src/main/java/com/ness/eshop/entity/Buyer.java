@@ -27,12 +27,6 @@ public class Buyer extends User {
 	}
 	
 
-	public Buyer(String login, String password, String name, int company, BigDecimal creditLimit) {
-		super(login, password, name);
-		this.company = company;
-		this.creditLimit = creditLimit;
-	}
-
 
 	public Buyer() {
 		
@@ -65,6 +59,7 @@ public class Buyer extends User {
 			return false;
 		return true;
 	}
+
 
 
 
