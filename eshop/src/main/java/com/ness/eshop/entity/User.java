@@ -18,9 +18,6 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name="person")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="TYPE", discriminatorType=DiscriminatorType.STRING)
-@DiscriminatorValue("General")
 public class User extends EntityInterface {
 
 	

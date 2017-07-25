@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 
+import com.ness.eshop.domain.SupplierDTO;
 import com.ness.eshop.domain.UserDTO;
+import com.ness.eshop.entity.Supplier;
 import com.ness.eshop.entity.User;
 import com.ness.eshop.service.UserService;
 
@@ -44,6 +46,14 @@ public class UsersController {
 	public User saveUser(UserDTO userDTO) {
 
 		return userService.saveUser(userDTO);
+	}
+	
+
+	@GetMapping
+	@RequestMapping("/all_supplier")
+	public List<SupplierDTO> all_supplier() {
+
+		return userService.findAllSupplier("Supplier");
 	}
 	
 }

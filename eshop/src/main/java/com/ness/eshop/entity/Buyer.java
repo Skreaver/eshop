@@ -14,7 +14,6 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@DiscriminatorValue("Buyer")
 public class Buyer extends User {
 
 	private int company;
