@@ -1,8 +1,17 @@
 package com.ness.eshop.entity;
 
-import javax.persistence.Entity;
+import java.util.List;
 
-@Entity
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity(name = "Supplier")
 public class Supplier extends User {
 
 	public Supplier(String login, String password, String name) {
@@ -13,4 +22,19 @@ public class Supplier extends User {
 	public Supplier() {
 
 	}
+
+	@OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL) // mappedBy - name of object in product
+	private List<Product> products;
+
+	public void addProduct(Product product) {
+		products.add(product);
+		product.setSupplier(this);
+		
+	}
+
+
+
+
+	
+	
 }

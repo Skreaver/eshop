@@ -1,5 +1,6 @@
 package com.ness.eshop;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,9 +21,15 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 	}
 
-	// @Bean
-	// public CommandLineRunner runner(ConsoleUI ui) { return args ->ui.run(); }
+	@Bean
+	public CommandLineRunner runner(ConsoleUi ui) {
+		return args -> ui.run();
+	}
 
+	@Bean
+	public ConsoleUi consoleUI() {
+		return new ConsoleUi();
+	}
 
 	@Bean
 	public MapperDTOtoUser mapperDTOtoUser() {
@@ -34,7 +41,7 @@ public class Main {
 		return new MapperUserToDTO();
 
 	}
-	
+
 	@Bean
 	public MapperSupplierToDTO mapperSupplierToDTO() {
 		return new MapperSupplierToDTO();
@@ -45,7 +52,6 @@ public class Main {
 		return new MapperDTOtoSupplier();
 
 	}
-	
 
 	@Bean
 	public UserService userService() {

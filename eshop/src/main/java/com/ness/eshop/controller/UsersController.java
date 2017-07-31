@@ -3,6 +3,7 @@ package com.ness.eshop.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,7 @@ public class UsersController {
 	
 	@GetMapping
 	@RequestMapping("/all")
+	@PreAuthorize("hasAuthority('ROLE_USER')")
 	public List<UserDTO> findAll() {
 
 		return userService.findAll();
@@ -54,6 +56,14 @@ public class UsersController {
 	public List<SupplierDTO> all_supplier() {
 
 		return userService.findAllSupplier("Supplier");
+	}
+	
+	@PostMapping
+	@RequestMapping(value = "/registration")
+	public String registration(SupplierDTO supplierDTO) {
+
+		userService.saveSupplier(supplierDTO);
+		return "admin";
 	}
 	
 }

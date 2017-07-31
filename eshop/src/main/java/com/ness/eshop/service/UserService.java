@@ -22,5 +22,7 @@ public interface UserService {
 	List<SupplierDTO> findAllSupplier(String supplier);
 	
 	List<BuyerDTO> findAllBuyer(String buyer);
+	
+	
 
 }

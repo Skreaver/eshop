@@ -17,9 +17,8 @@ public class MainController {
 	@Autowired
 	UserService userService;
 
-	@RequestMapping(value = { "/", "home" })
+	@RequestMapping(value = { "/", "home" })	
 	public String home() {
-
 		return "home";
 	}
 
@@ -44,12 +43,6 @@ public class MainController {
 		return "403";
 	}
 
-	@PostMapping
-	@RequestMapping(value = "/registration")
-	public String registration(UserDTO userDTO) {
 
-		userService.saveUser(userDTO);
-		return "admin";
-	}
 
 }

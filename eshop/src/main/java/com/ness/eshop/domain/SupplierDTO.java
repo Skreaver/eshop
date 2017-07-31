@@ -1,10 +1,7 @@
 package com.ness.eshop.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.ness.eshop.entity.Product;
 
-@Getter
-@Setter
 public class SupplierDTO extends UserDTO{
 
 	public SupplierDTO(String login, String password, String name) {
@@ -12,6 +9,10 @@ public class SupplierDTO extends UserDTO{
 		// TODO Auto-generated constructor stub
 	}
 
+	public SupplierDTO() {
+	
+	}
+	
 
-
+	
 }

@@ -1,13 +1,16 @@
 package com.ness.eshop.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import com.ness.eshop.domain.BuyerDTO;
 import com.ness.eshop.domain.SupplierDTO;
 import com.ness.eshop.domain.UserDTO;
+import com.ness.eshop.entity.Product;
 import com.ness.eshop.entity.Supplier;
 import com.ness.eshop.entity.User;
 import com.ness.eshop.mapper.MapperDTOtoSupplier;
@@ -24,6 +27,9 @@ public class UserServiceImp implements UserService {
 
 	@Autowired
 	AbstractRepositoryJPA<Supplier> repositorySupplier;
+	
+	//@Autowired
+	//AbstractRepositoryJPA<Product> repositoryProduct;
 
 	@Autowired
 	MapperUserToDTO mapperUserToDTO;
@@ -56,8 +62,7 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
-	public Supplier saveSupplier(SupplierDTO supplierDTO) {
-
+	public Supplier saveSupplier(SupplierDTO supplierDTO) {		
 		return repositorySupplier.save(mapperDTOtoSupplier.apply(supplierDTO));
 	}
 
