@@ -21,10 +21,8 @@ public class Main {
 		SpringApplication.run(Main.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner runner(ConsoleUi ui) {
-		return args -> ui.run();
-	}
+	//@Bean
+	//public CommandLineRunner runner(ConsoleUi ui) {	return args -> ui.run();}
 
 	@Bean
 	public ConsoleUi consoleUI() {

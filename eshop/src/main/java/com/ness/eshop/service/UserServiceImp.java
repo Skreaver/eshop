@@ -1,12 +1,9 @@
 package com.ness.eshop.service;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-
 import com.ness.eshop.domain.BuyerDTO;
 import com.ness.eshop.domain.SupplierDTO;
 import com.ness.eshop.domain.UserDTO;

@@ -1,5 +1,6 @@
 package com.ness.eshop.domain;
 
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -22,6 +23,7 @@ public class UserDTO {
 
 	@NotNull
     @NotEmpty
+    @Transient
 	private String verifiedPasswd;
 
 	public UserDTO(String login, String password, String name) {

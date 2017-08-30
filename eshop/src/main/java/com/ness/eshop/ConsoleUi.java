@@ -1,8 +1,5 @@
 package com.ness.eshop;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 import io.vavr.collection.List;
 import io.vavr.collection.SortedSet;
 import io.vavr.collection.TreeSet;

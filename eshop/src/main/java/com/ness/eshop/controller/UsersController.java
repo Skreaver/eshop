@@ -27,39 +27,34 @@ public class UsersController {
 	@Autowired
 	public UserService userService;
 
-	@GetMapping
-	@RequestMapping("/{id}")
+	@GetMapping("/{id}")
 	public UserDTO findById(@PathVariable int id) {
 
 		return userService.findById(id);
 	}
 
 	
-	@GetMapping
-	@RequestMapping("/all")
+	@GetMapping("/all")
 	@PreAuthorize("hasAuthority('ROLE_USER')")
 	public List<UserDTO> findAll() {
 
 		return userService.findAll();
 	}
 
-	@PostMapping
-	@RequestMapping("/save")
+	@PostMapping("/save")
 	public User saveUser(UserDTO userDTO) {
 
 		return userService.saveUser(userDTO);
 	}
 	
 
-	@GetMapping
-	@RequestMapping("/all_supplier")
+	@GetMapping("/all_supplier")
 	public List<SupplierDTO> all_supplier() {
 
 		return userService.findAllSupplier("Supplier");
 	}
 	
-	@PostMapping
-	@RequestMapping(value = "/registration")
+	@PostMapping("/registration")
 	public String registration(SupplierDTO supplierDTO) {
 
 		userService.saveSupplier(supplierDTO);
